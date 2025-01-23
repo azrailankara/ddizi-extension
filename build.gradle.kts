@@ -1,8 +1,3 @@
-plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-}
-
 buildscript {
     repositories {
         google()
@@ -22,6 +17,11 @@ allprojects {
         mavenCentral()
         maven("https://jitpack.io")
     }
+}
+
+plugins {
+    id("com.android.library") version "7.0.4"
+    id("org.jetbrains.kotlin.android") version "1.7.10"
 }
 
 android {
