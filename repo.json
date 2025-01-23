@@ -1,0 +1,8 @@
+{
+    "name": "DDizi.im Repository",
+    "description": "DDizi.im için Cloudstream eklentisi",
+    "manifestVersion": 1,
+    "pluginLists": [
+        "https://raw.githubusercontent.com/azrailankara/ddizi-extension/builds/plugins.json"
+    ]
+} 

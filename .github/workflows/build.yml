@@ -33,13 +33,13 @@ jobs:
         run: |
           ./gradlew make
           
-      - name: Create builds branch
+      - name: Push Builds
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git checkout --orphan builds
-          git rm -rf .
+          git reset --hard
           cp -r build/repos/* .
           git add .
-          git commit -m "Build $GITHUB_SHA" || exit 0
+          git commit -m "Build $GITHUB_SHA"
           git push -f origin builds 
