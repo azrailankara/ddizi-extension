@@ -2,26 +2,24 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
         maven("https://jitpack.io")
     }
     dependencies {
         classpath("com.android.tools.build:gradle:7.0.4")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
-        classpath("com.github.recloudstream:gradle:master-SNAPSHOT")
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://jitpack.io")
     }
 }
 
 plugins {
-    id("com.android.library") version "7.0.4"
-    id("org.jetbrains.kotlin.android") version "1.7.10"
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+}
+
+repositories {
+    google()
+    mavenCentral()
+    maven("https://jitpack.io")
 }
 
 android {
@@ -61,4 +59,5 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.13.1")
 }
 
+// Apply cloudstream plugin
 apply(from = "https://raw.githubusercontent.com/recloudstream/gradle/master/cloudstream.gradle") 
