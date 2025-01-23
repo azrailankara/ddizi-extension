@@ -43,4 +43,21 @@ allprojects {
         mavenCentral()
         maven("https://jitpack.io")
     }
+}
+
+dependencies {
+    implementation(kotlin("stdlib"))
+    implementation("com.github.Blatzar:NiceHttp:0.4.3")
+    implementation("org.jsoup:jsoup:1.15.3")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.1")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.13.1")
+}
+
+cloudstream {
+    description = "DDizi.im için Cloudstream eklentisi"
+    authors = listOf("azrailankara")
+    language = "tr"
+    status = 1
+    tvTypes = listOf("TvSeries")
 } 
