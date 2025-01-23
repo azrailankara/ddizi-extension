@@ -32,10 +32,10 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git clone https://github.com/azrailankara/ddizi-extension.git
-          cd ddizi-extension
-          git checkout -b builds
-          cp ../build/repos/* .
+          git clone https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          cd $(basename ${{ github.repository }})
+          git checkout -b builds || git checkout builds
+          cp -r ../build/repos/* .
           git add .
-          git commit -m "Build $GITHUB_SHA"
-          git push origin builds --force 
+          git commit -m "Build $GITHUB_SHA" || exit 0
+          git push -f origin builds 
